@@ -7,28 +7,20 @@ int main(int argc, char * argv[]) {
     
     //SIZE 크기 배열 선언
     int i;
-    int grade[SIZE];
-    int score[SIZE];
-
-    for(i=0;i<SIZE;i++)
-    {
-        grade[i] = rand() % 100;
-        //0-99의 숫자만 랜덤으로 가져오겠다는 뜻
-    }
-       
-    for(i=0;i<SIZE;i++)
-    {
-        score[i] = grade[i];
-    }
+    int a[SIZE] = {1,2,3,4,5};
+    int b[SIZE] = {1,2,6,4,5};
+    int flag_same = 1;
     
-//점수 화면 출력 (반복문 활용)
-#if 1
     for(i=0;i<SIZE;i++)
-    printf("grade[%i] = %i, score[%i] = %i\n",
-           i, grade[i], i, score[i]);
-#endif
-        
-            
+    {
+        if (a[i] != b[i])
+        {
+            printf("%i-th element if diff.\n", i);
+            flag_same = 0;
+        }
+    }
+        printf("Are a and b the same? %i\n", flag_same);
+    
     system("PAUSE");
     return 0;
     
