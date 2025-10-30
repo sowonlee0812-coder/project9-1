@@ -5,28 +5,29 @@
 
 int main(int argc, char * argv[]) {
     
-    //SIZE명의 학생에 대한 시험성적
+    //SIZE 크기 배열 선언
     int i;
-    int testScore[SIZE];
-    int sum = 0;
-    
-    //점수 입력
-    printf("%i명 점수를 입력하세요.\n", SIZE);
-    
+    int grade[SIZE];
+    int score[SIZE];
+
     for(i=0;i<SIZE;i++)
     {
-        scanf("%d", &testScore[i]);
-        sum += testScore[i];
+        grade[i] = rand() % 100;
+        //0-99의 숫자만 랜덤으로 가져오겠다는 뜻
     }
-
-    //점수 화면 출력 (반복문 활용)
-    #if 0
+       
     for(i=0;i<SIZE;i++)
-        printf("grade[%i] = %i\n", i, testScore[i]);
-    #endif
+    {
+        score[i] = grade[i];
+    }
     
-    printf("성적 평균 : %i\n", sum/SIZE);
-  
+//점수 화면 출력 (반복문 활용)
+#if 1
+    for(i=0;i<SIZE;i++)
+    printf("grade[%i] = %i, score[%i] = %i\n",
+           i, grade[i], i, score[i]);
+#endif
+        
             
     system("PAUSE");
     return 0;
